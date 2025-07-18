@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1xadveso7ou8"]
+
+[ext_resource type="Texture2D" uid="uid://ckqtfcrnbbq2g" path="res://Art/Sprout Lands - Sprites - Basic pack/Objects/Chest.png" id="1_rbn1w"]
+[ext_resource type="Script" uid="uid://bkemueit2m47t" path="res://Object/chest.gd" id="2_q1e48"]
+[ext_resource type="PackedScene" uid="uid://ctx8frbypt0h7" path="res://Interactions/interactable.tscn" id="2_t3w1f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbn1w"]
+size = Vector2(16, 7)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t3w1f"]
+radius = 15.0
+
+[node name="Chest" type="Sprite2D"]
+texture = ExtResource("1_rbn1w")
+hframes = 5
+vframes = 2
+script = ExtResource("2_q1e48")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_rbn1w")
+
+[node name="Interactable" parent="." instance=ExtResource("2_t3w1f")]
+position = Vector2(-1.5, 4.5)
+interact_name = "OpenChest"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(1.5, -0.5)
+shape = SubResource("CircleShape2D_t3w1f")
