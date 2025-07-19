@@ -11,11 +11,19 @@ enum COW_STATE { IDLE, WALK}
 @onready var state_machine = animation_tree.get("parameters/playback")
 @onready var sprite = $FreeCowSprites
 @onready var timer = $Timer
+@onready var interactable: Area2D = $Interactable
 
 var move_direction :Vector2 = Vector2.ZERO
 var current_state : COW_STATE= COW_STATE.IDLE
 func _ready():
 	pick_new_state()
+	interactable.interact = _on_interact
+	
+	
+func _on_interact():
+	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"),"start")
+	
+	
 	
 func _physics_process(_delta):
 	if(current_state == COW_STATE.WALK):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://pysk5avnubc2"]
+[gd_scene load_steps=30 format=3 uid="uid://pysk5avnubc2"]
 
 [ext_resource type="Texture2D" uid="uid://c8w8on3i8occp" path="res://Art/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_k8dsg"]
 [ext_resource type="Script" uid="uid://ch84fbwen8ahm" path="res://Characters/player_cat.gd" id="1_u0lhy"]
@@ -21,6 +21,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Direction/Action_HitBox:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_hhb2n"]
 resource_name = "idle_down"
@@ -37,6 +49,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Direction/Action_HitBox:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_nf2gw"]
@@ -55,6 +79,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [8, 9]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Direction/Action_HitBox:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
 
 [sub_resource type="Animation" id="Animation_ctw3t"]
 resource_name = "idle_right"
@@ -71,6 +107,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [12, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Direction/Action_HitBox:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
 }
 
 [sub_resource type="Animation" id="Animation_t8sd1"]
@@ -89,6 +137,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [4, 5]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Direction/Action_HitBox:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.14159]
+}
 
 [sub_resource type="Animation" id="Animation_gx6m4"]
 resource_name = "walk_down"
@@ -105,6 +165,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Direction/Action_HitBox:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_k8wwv"]
@@ -123,6 +195,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [10, 11]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Direction/Action_HitBox:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
 
 [sub_resource type="Animation" id="Animation_10mfh"]
 resource_name = "walk_right"
@@ -140,6 +224,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [14, 15]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Direction/Action_HitBox:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
 
 [sub_resource type="Animation" id="Animation_twab1"]
 resource_name = "walk_up"
@@ -156,6 +252,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Direction/Action_HitBox:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.14159]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qwdhh"]
@@ -237,6 +345,10 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace2D_3b306")
 states/Walk/position = Vector2(510, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_pilkh"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_rktvm"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_adw66")]
 
+[sub_resource type="LabelSettings" id="LabelSettings_hhb2n"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
 [node name="PlayerCat" type="CharacterBody2D"]
 script = ExtResource("1_u0lhy")
 starting_direction = Vector2(0, -1)
@@ -261,4 +373,27 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0, -0.0202951)
 parameters/Walk/blend_position = Vector2(-0.124103, -0.0933579)
 
-[node name="InteractingComponent" parent="." instance=ExtResource("3_hhb2n")]
+[node name="Direction" type="Marker2D" parent="."]
+
+[node name="Action_HitBox" parent="Direction" instance=ExtResource("3_hhb2n")]
+position = Vector2(0, 4)
+scale = Vector2(0.7, 0.7)
+
+[node name="InteractLabel" type="Label" parent="."]
+z_index = 100
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -57.0
+offset_right = 49.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "E to Interact"
+label_settings = SubResource("LabelSettings_hhb2n")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
