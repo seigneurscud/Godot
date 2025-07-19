@@ -18,13 +18,19 @@ var current_state : COW_STATE= COW_STATE.IDLE
 func _ready():
 	pick_new_state()
 	interactable.interact = _on_interact
+	if not DialogueManager.dialogue_ended.is_connected(_on_dialogue_finished):
+		DialogueManager.dialogue_ended.connect(_on_dialogue_finished)
 	
 	
 func _on_interact():
-	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"),"start")
+	if(interactable.is_interactable):
+		interactable.is_interactable = false 
+		DialogueManager.show_dialogue_balloon(load("res://dialogue/main.dialogue"),"start")
 	
-	
-	
+
+func _on_dialogue_finished(_dialogue_ressource):
+	interactable.is_interactable = true
+
 func _physics_process(_delta):
 	if(current_state == COW_STATE.WALK):
 		velocity = move_direction * move_speed	

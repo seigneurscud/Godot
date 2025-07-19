@@ -1,3 +1,3 @@
 extends Node
 
-var carrot_status: String =""
+var carrot_status: String ="has"

@@ -22,21 +22,23 @@ func _ready() -> void:
 	open_timer.wait_time = 0.1
 	
 func _on_interact():
-	interactable.is_interactable = false	
 	
-	if not is_door_open:
-		# OUVERTURE
-		sfx_open.play()
-		animation_frame = OPEN_START
-		opening = true
-	else:
-		# FERMETURE
-		sfx_close.play()
-		animation_frame = CLOSE_START
-		opening = false
-		
-	sprite_2d.frame = animation_frame
-	open_timer.start()
+	if(interactable.is_interactable):
+		if not is_door_open:
+			# OUVERTURE
+			interactable.is_interactable = false	
+			sfx_open.play()
+			animation_frame = OPEN_START
+			opening = true
+		else:
+			# FERMETURE
+			interactable.is_interactable = false	
+			sfx_close.play()
+			animation_frame = CLOSE_START
+			opening = false
+			
+		sprite_2d.frame = animation_frame
+		open_timer.start()
 	
 func _on_open_timer_timeout():
 	if opening:

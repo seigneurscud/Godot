@@ -1,5 +1,16 @@
 ~ start
 
-Meuuuuuuuuuuuuuuuuuuuuuuuuuuh!
+if State.carrot_status == "eaten":
+	Vache : Meuhhh <3 !
+elif State.carrot_status == "has":
+	Vache : meuh ?
+	Que faire ?
+	- Donner la carotte 
+		set State.carrot_status = "eaten"
+		Polo: Hop, ça c'est une gentille vavache !
+		Vache: Meuuuuuh !
+	- Garder la carotte 
+		Polo: Nope, barre toi !
+		Vache: Meuh :'(
 
 => END
