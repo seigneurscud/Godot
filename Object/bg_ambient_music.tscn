@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbbw44ll6287k"]
+
+[ext_resource type="AudioStream" uid="uid://c1rv50o056vwd" path="res://music/ambiant2.mp3" id="1_d2dya"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_d2dya")
+volume_db = -15.0
+autoplay = true

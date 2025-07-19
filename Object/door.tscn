@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://c1w1owkdfpv5y"]
+
+[ext_resource type="Script" uid="uid://c327ryu2j30op" path="res://Object/door.gd" id="1_e8m1a"]
+[ext_resource type="Texture2D" uid="uid://crgsc8ykxvy4g" path="res://Art/animated_door_sliding_glass.png" id="2_e8m1a"]
+[ext_resource type="PackedScene" uid="uid://ctx8frbypt0h7" path="res://Interactions/interactable.tscn" id="2_qlq3m"]
+[ext_resource type="Script" uid="uid://cnwfhiih4pm8e" path="res://Object/collision_shape_2d.gd" id="4_dobhv"]
+[ext_resource type="AudioStream" uid="uid://cgc7wc02www3d" path="res://sounds/fx-swanee-whistle-up-42036.mp3" id="5_dobhv"]
+[ext_resource type="AudioStream" uid="uid://0ug61oko28v1" path="res://sounds/fx-swanee-whistle-down-42035.mp3" id="6_43ie3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbi8v"]
+size = Vector2(32, 13)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wi5s3"]
+radius = 18.0
+
+[node name="Door" type="StaticBody2D"]
+script = ExtResource("1_e8m1a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_e8m1a")
+hframes = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_hbi8v")
+
+[node name="Interactable" parent="." instance=ExtResource("2_qlq3m")]
+position = Vector2(0, 0)
+interact_name = "Open door"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_wi5s3")
+script = ExtResource("4_dobhv")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="sfx_open" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_dobhv")
+volume_db = -10.0
+pitch_scale = 1.4
+
+[node name="sfx_close" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_43ie3")
+volume_db = -10.0
+pitch_scale = 1.4
