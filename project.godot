@@ -23,6 +23,7 @@ State="*res://Scripts/State.gd"
 [dialogue_manager]
 
 runtime/balloon_path="res://dialogue/balloon.tscn"
+runtime/state_autoload_shortcuts=["res://Scripts/State.gd", null]
 
 [display]
 

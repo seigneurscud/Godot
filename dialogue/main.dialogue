@@ -1,12 +1,12 @@
 ~ start
 
-if State.carrot_status == "eaten":
+if carrot_status == "eaten":
 	Vache : Meuhhh <3 !
-elif State.carrot_status == "has":
+elif carrot_status == "has":
 	Vache : meuh ?
 	Que faire ?
 	- Donner la carotte 
-		set State.carrot_status = "eaten"
+		set carrot_status = "eaten"
 		Polo: Hop, ça c'est une gentille vavache !
 		Vache: Meuuuuuh !
 	- Garder la carotte 
